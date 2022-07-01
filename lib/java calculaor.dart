@@ -20,6 +20,7 @@ class _JavaCalculatorState extends State<JavaCalculator> {
   void initState() {
     super.initState();
     number1Controller.addListener(() => setState(() {}));
+    number2Controller.addListener(() => setState(() {}));
   }
 
   @override
@@ -75,7 +76,7 @@ class _JavaCalculatorState extends State<JavaCalculator> {
   Widget EnterNumber1() => TextField(
         controller: number1Controller,
         onSubmitted: (value) => setState(() {
-          this.num1 = int.parse(value);
+          num1 = int.parse(value);
         }),
         decoration: InputDecoration(
           hintText: '1234',
@@ -101,7 +102,7 @@ class _JavaCalculatorState extends State<JavaCalculator> {
   Widget EnterNumber2() => TextField(
         controller: number2Controller,
         onSubmitted: (value) => setState(() {
-          this.num2 = int.parse(value);
+          num2 = int.parse(value);
         }),
         decoration: InputDecoration(
           hintText: '1234',

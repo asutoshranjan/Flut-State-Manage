@@ -35,7 +35,7 @@ class _ListAppState extends State<ListApp> {
               TextField(
                 controller: textController,
                 onSubmitted: (data) => setState(() {
-                  this.task = data;
+                   task = data;
                 }),
                 decoration: InputDecoration(
                   hintText: 'Add a task here...',
@@ -64,9 +64,8 @@ class _ListAppState extends State<ListApp> {
                   });
                 },
                 shape: StadiumBorder(),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                   child: Text(
                     "  Add  ",
                     style: TextStyle(
@@ -76,18 +75,32 @@ class _ListAppState extends State<ListApp> {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
               Container(
                 height: 440,
                 child: ListView(
                   children: [
                     for (int i = 0; i < Data.length; i++)
-                      Text(
-                        Data[i],
-                        style: TextStyle(
-                          fontSize: 24,
-                          height: 1.5,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 1.4,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: Card(
+                          color: Colors.blueGrey,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                            child: Text(
+                              Data[i],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                height: 1.5,
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 1.4,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                   ],
