@@ -33,10 +33,13 @@ class _ListAppState extends State<ListApp> {
 
               // Input through a text field
               TextField(
-                controller: textController,
-                onSubmitted: (data) => setState(() {
-                   task = data;
+                onChanged: (data) => setState(() {
+                  task = data;
                 }),
+                controller: textController,
+                // onSubmitted: (data) => setState(() {
+                //    task = data;
+                // }),
                 decoration: InputDecoration(
                   hintText: 'Add a task here...',
                   labelText: 'New Task',
@@ -63,12 +66,14 @@ class _ListAppState extends State<ListApp> {
                     Data.add(task);
                   });
                 },
+                color: Colors.blueAccent[100],
                 shape: StadiumBorder(),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                   child: Text(
                     "  Add  ",
                     style: TextStyle(
+                      color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
