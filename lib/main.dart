@@ -1,5 +1,6 @@
 import 'package:flut_py/ListApp.dart';
 import 'package:flut_py/Streams/StreamBuilderCounter.dart';
+import 'package:flut_py/Streams/StreamCertificates.dart';
 import 'package:flut_py/java%20calculaor.dart';
 import 'package:flutter/material.dart';
 import 'java/calculator.java';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: StreamBuilderCounter(),
+      home: StreamCertificate(),
     );
   }
 }
